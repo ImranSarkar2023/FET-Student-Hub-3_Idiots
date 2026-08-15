@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calc</title>
+</head>
+<body>
+    
+
+
+
+
+<h2>Energy Content Calculator</h2>
+
+<label for="carbohydrate">Carbohydrates (g):</label>
+<input type="number" id="carbohydrate">
+
+<br><br>
+
+<label for="protein">Protein (g):</label>
+<input type="number" id="protein">
+
+<br><br>
+
+<label for="fat">Fat (g):</label>
+<input type="number" id="fat">
+
+<br><br>
+
+<button type="button" onclick="myFunction()">Calculate Calories</button>
+
+<p>Total Calories: <span id="result">--</span></p>
+
+<script>
+
+    function myFunction() {
+
+        let C = document.getElementById("carbohydrate").value;
+        let P = document.getElementById("protein").value;
+        let F = document.getElementById("fat").value;
+
+        let calories;
+
+        calories = (4 * C) + (4 * P) + (9 * F);
+
+        document.getElementById("result").innerText =
+            calories.toFixed(2);
+
+    }
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
