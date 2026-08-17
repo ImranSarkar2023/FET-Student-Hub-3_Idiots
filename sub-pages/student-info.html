@@ -1,84 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table,
-        td,
-        th {
+        table,td,th{
             border-width: 5px;
-            border-style: solid;
+            border-style: solid ;
             border-color: rgb(12, 126, 101);
             border-radius: 5px;
             border-collapse: collapse;
             padding: 15px;
+        
         }
-
-        table {
+        table{
             width: 100%;
             margin: auto;
             text-align: center;
         }
-
-        tr:nth-child(2n+3) {
+        tr:nth-child(2n+3){
             background-color: aquamarine;
         }
-
-        tr:nth-child(2n+2) {
+        tr:nth-child(2n+2){
             background-color: aqua;
         }
+        th,td:hover{
+            background-color:rgb(98, 179, 233) ;
 
-        th,
-        td:hover {
-            background-color: rgb(98, 179, 233);
         }
     </style>
 </head>
-
 <body>
     <table>
-        <tr>
-            <th> Students Name</th>
-            <th> Students ID</th>
-            <th> Students Reg.</th>
-            <th>Phone Num.</th>
-            <th>Students E-mail</th>
-        </tr>
-        <tr>
-            <td>Uttam Paul</td>
-            <td> 2507003</td>
-            <td> 60053</td>
-            <td>+8801XYYYYYYYY</td>
-            <td>uttom2507003@gmail.com</td>
-        </tr>
-        <tr>
-            <td>Maruf Ahmed Shawon</td>
-            <td> 2507011</td>
-            <td> 60061</td>
-            <td>+8801XYYYYYYYY</td>
-            <td>shawon2507011@gmail.com</td>
-        </tr>
-        <tr>
-            <td>Umme Mahfuza Jahin</td>
-            <td> 2507015</td>
-            <td> 60065</td>
-            <td>+8801XYYYYYYYY</td>
-            <td>jahin2707015@gmail.com</td>
-        </tr>
-        <tr>
-            <td>Eaqub Hosen Imran </td>
-            <td> 2507018</td>
-            <td> 60068</td>
-            <td>+8801XYYYYYYYY</td>
-            <td>imran2507018@gmail.com</td>
-        </tr>
-    </table>
+        <tr> <th> Students Name</th>
+        <th> Students ID</th>
+        <th> Students Reg.</th>
+        <th>Phone Num.</th>
+        <th>Students E-mail</th>
+    </tr>
+    <tr><td>Uttam Paul</td>
+    <td> 2507003</td>
+    <td> 60053</td>
+    <td>+8801XYYYYYYYY</td>
+    <td>uttom2507003@gmail.com</td>
+    </tr>
+<tr><td>Maruf Ahmed Shawon</td>
+    <td> 2507011</td>
+    <td> 60061</td>
+    <td>+8801XYYYYYYYY</td>
+    <td>shawon2507011@gmail.com</td>
+</tr>
+<tr><td>Umme Mahfuza Jahin</td>
+    <td> 2507015</td>
+    <td> 60065</td>
+    <td>+8801XYYYYYYYY</td>
+    <td>jahin2707015@gmail.com</td>
+</tr>
+<tr><td>Eaqub Hosen Imran </td>
+    <td> 2507018</td>
+    <td> 60068</td>
+    <td>+8801XYYYYYYYY</td>
+    <td>imran2507018@gmail.com</td>
+</tr>
+    
+    
 
-<a href="../index.html"> <h1>Home</h1></a>
+  <h2>Student Registration Form</h2>
 
+  First Name:
+  <input type="text" id="fname"><br><br>
+
+  Last Name:
+  <input type="text" id="lname"><br><br>
+
+  Roll:
+  <input type="number" id="roll"><br><br>
+
+  Age:
+  <input type="number" id="age"><br><br>
+
+  Gender:
+  <select id="gender">
+    <option value="">Select</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select><br><br>
+
+  Email:
+  <input type="email" id="email"><br><br>
+
+  <button onclick="addStudent()">Add Student</button>
+
+  <hr>
+
+ 
+    <tr>
+      <th>Name</th>
+      <th>Roll</th>
+      <th>Age</th>
+      <th>Gender</th>
+       <th>Email</th>
+    </tr>
+  
+
+  <script>
+
+    function addStudent() {
+
+      let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("lname").value;
+      let roll = document.getElementById("roll").value;
+      let age = document.getElementById("age").value;
+      let gender = document.getElementById("gender").value;
+      let email = document.getElementById("email").value;
+
+      if (fname == "" || lname == "" || roll == "" || age == "" ||
+        gender == "" || email == "") {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      let table = document.getElementById("studentTable");
+      let row = table.insertRow();
+
+      row.insertCell(0).innerHTML = fname + " " + lname;
+      row.insertCell(1).innerHTML = roll;
+      row.insertCell(2).innerHTML = age;
+      row.insertCell(3).innerHTML = gender;
+      row.insertCell(4).innerHTML = email;
+
+      document.getElementById("fname").value = "";
+      document.getElementById("lname").value = "";
+      document.getElementById("roll").value = "";
+      document.getElementById("age").value = "";
+      document.getElementById("gender").value = "";
+      document.getElementById("email").value = "";
+    }
+
+  </script>
+</table>
 </body>
 
 </html>
